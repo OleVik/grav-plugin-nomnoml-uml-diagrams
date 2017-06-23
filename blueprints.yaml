@@ -1,0 +1,43 @@
+name: Nomnoml Uml Diagrams
+version: 1.0.0
+description: Render nomnoml UML Diagrams in Markdown
+icon: plug
+author:
+  name: Ole Vik
+  email: git@olevik.net
+homepage: https://github.com/OleVik/grav-plugin-nomnoml-uml-diagrams
+demo: http://nomnoml.com
+keywords: diagram, uml, nomnoml
+bugs: https://github.com/OleVik/grav-plugin-nomnoml-uml-diagrams/issues
+docs: https://github.com/OleVik/grav-plugin-nomnoml-uml-diagrams/blob/develop/README.md
+license: MIT
+dependencies:
+  - shortcode-core
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    builtin_css:
+      type: toggle
+      label: Use Plugin's CSS
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    builtin_js:
+      type: toggle
+      label: Use Plugin's JS
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
