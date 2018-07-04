@@ -1,6 +1,6 @@
 # Nomnoml Uml Diagrams Plugin
 
-The **Nomnoml Uml Diagrams** Plugin is for [Grav CMS](http://github.com/getgrav/grav). Renders [nomnoml UML Diagrams](https://github.com/skanaar/nomnoml) in Markdown through a `[nom]`-shortcode.
+The **Nomnoml UML Diagrams** Plugin is for [Grav CMS](http://github.com/getgrav/grav). Renders [nomnoml UML Diagrams](https://github.com/skanaar/nomnoml) in Markdown through a `[nom]`-shortcode.
 
 ## Installation
 
@@ -21,8 +21,6 @@ To install this plugin, just download the zip version of this repository and unz
 You should now have all the plugin files under
 
     /your/site/grav/user/plugins/nomnoml-uml-diagrams
-	
-> NOTE: This plugin is a modular component for Grav which requires [Grav](http://github.com/getgrav/grav) and the [Error](https://github.com/getgrav/grav-plugin-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) to operate.
 
 ## Configuration
 
@@ -34,9 +32,35 @@ Here is the default configuration and an explanation of available options:
 enabled: true
 builtin_css: true
 builtin_js: true
+defaultoptions: 
 ```
 
-Simply put, you can enable or disable the plugin, and enable or disable the plugin's built-in CSS and JS.
+Simply put, you can enable or disable the plugin, and enable or disable the plugin's built-in CSS and JS. The `defaultoptions` take an array of key-value pairs with [directives](https://github.com/skanaar/nomnoml#directives) and [styles](https://github.com/skanaar/nomnoml#custom-classifier-styles) for Nomnoml, eg.:
+
+```
+defaultoptions:
+  arrowSize: '1'
+  bendSize: '0.3'
+  direction: down
+  gutter: '5'
+  edgeMargin: '3'
+  edges: hard
+  fill: 'rgb(255,255,255); rgb(251,251,251); rgb(247,247,247)'
+  fillArrows: 'false'
+  font: Calibri
+  fontSize: '13'
+  leading: '1.25'
+  lineWidth: '2'
+  padding: '10'
+  spacing: '20'
+  stroke: '#33322E'
+  zoom: '1'
+  .data: 'center dashed italic'
+  .instance: 'center underline bold'
+  .method: center
+```
+
+To disable the defaults on a specific diagram, add a `default=false` parameter, eg.: `[nom default=false]Grav->Awesome[/nom]`.
 
 ## Usage
 

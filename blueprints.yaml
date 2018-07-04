@@ -1,7 +1,7 @@
 name: Nomnoml Uml Diagrams
-version: 1.0.0
+version: 1.0.1
 description: Render nomnoml UML Diagrams in Markdown
-icon: plug
+icon: sitemap
 author:
   name: Ole Vik
   email: git@olevik.net
@@ -41,3 +41,10 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+    defaultoptions:
+      type: array
+      label: Default directives and styles
+      help: 'Without # prefix in key'
+      placeholder_key: Directive or style
+      placeholder_value: Value
+      required: false

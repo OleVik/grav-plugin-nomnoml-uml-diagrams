@@ -9,14 +9,16 @@ use RocketTheme\Toolbox\Event\Event;
  * Nomnoml-library
  *
  * Class NomnomlUMLDiagramsPlugin
+ * 
  * @package Grav\Plugin
- * @return mixed Shortcode for UML Diagrams
+ * @return  mixed Shortcode for UML Diagrams
  * @license MIT License by Ole Vik
  */
 class NomnomlUMLDiagramsPlugin extends Plugin
 {
     /**
      * Initialize plugin and subsequent events
+     * 
      * @return array
      */
     public static function getSubscribedEvents()
@@ -28,6 +30,8 @@ class NomnomlUMLDiagramsPlugin extends Plugin
 
     /**
      * Initialize the plugin
+     * 
+     * @return void
      */
     public function onPluginsInitialized()
     {
@@ -37,15 +41,19 @@ class NomnomlUMLDiagramsPlugin extends Plugin
         }
         
         /* Register events */
-        $this->enable([
-            'onAssetsInitialized' => ['init', 0],
-            'onShortcodeHandlers' => ['onShortcodeHandlers', 0]
-        ]);
+        $this->enable(
+            [
+                'onAssetsInitialized' => ['init', 0],
+                'onShortcodeHandlers' => ['onShortcodeHandlers', 0]
+            ]
+        );
     }
 
     /**
      * Create shortcode-handler
+     *  
      * @param Event $e RocketTheme Event-handler
+     * 
      * @return void
      */
     public function onShortcodeHandlers(Event $e)
@@ -55,19 +63,20 @@ class NomnomlUMLDiagramsPlugin extends Plugin
 
     /**
      * Initialize plugin assets
+     * 
      * @return void
      */
     public function init()
     {
         $config = (array) $this->config->get('plugins.nomnoml-uml-diagrams');
         if ($config['builtin_css']) {
-            $this->grav['assets']->addCss('plugin://nomnoml-uml-diagrams/css/codemirror.css', 110);
-            $this->grav['assets']->addCss('plugin://nomnoml-uml-diagrams/css/solarized.nomnoml.css', 109);
+            $this->grav['assets']->addCss('plugin://nomnoml-uml-diagrams/css/codemirror.css');
+            $this->grav['assets']->addCss('plugin://nomnoml-uml-diagrams/css/solarized.nomnoml.css');
         }
         if ($config['builtin_js']) {
             $this->grav['assets']->addJs('plugin://nomnoml-uml-diagrams/js/lodash.min.js', 110);
             $this->grav['assets']->addJs('plugin://nomnoml-uml-diagrams/js/dagre.min.js', 109);
-            $this->grav['assets']->addJs('plugin://nomnoml-uml-diagrams/js/nomnoml.min.js', 108);
+            $this->grav['assets']->addJs('plugin://nomnoml-uml-diagrams/js/nomnoml.js', 108);
         }
     }
 }
