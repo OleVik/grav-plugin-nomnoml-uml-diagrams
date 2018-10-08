@@ -25,7 +25,9 @@ class NomnomlShortcode extends Shortcode
         $this->shortcode->getHandlers()->add(
             'nom', function (ShortcodeInterface $sc) {
                 $config = $this->grav['config']->get('plugins.nomnoml-uml-diagrams');
-                $defaults = $config['defaultoptions'];
+                if (isset($config['defaultoptions'])) {
+                    $defaults = $config['defaultoptions'];
+                }
                 $hash = md5(random_bytes(5));
                 $content = $sc->getContent();
                 $content = htmlspecialchars_decode($content);
