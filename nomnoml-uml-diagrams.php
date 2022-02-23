@@ -3,13 +3,13 @@ namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
 use RocketTheme\Toolbox\Event\Event;
- 
+
 /**
  * Shortcode for UML Diagrams with
  * Nomnoml-library
  *
  * Class NomnomlUMLDiagramsPlugin
- * 
+ *
  * @package Grav\Plugin
  * @return  mixed Shortcode for UML Diagrams
  * @license MIT License by Ole Vik
@@ -18,7 +18,7 @@ class NomnomlUMLDiagramsPlugin extends Plugin
 {
     /**
      * Initialize plugin and subsequent events
-     * 
+     *
      * @return array
      */
     public static function getSubscribedEvents()
@@ -30,7 +30,7 @@ class NomnomlUMLDiagramsPlugin extends Plugin
 
     /**
      * Initialize the plugin
-     * 
+     *
      * @return void
      */
     public function onPluginsInitialized()
@@ -39,7 +39,7 @@ class NomnomlUMLDiagramsPlugin extends Plugin
         if ($this->isAdmin()) {
             return;
         }
-        
+
         /* Register events */
         $this->enable(
             [
@@ -51,19 +51,19 @@ class NomnomlUMLDiagramsPlugin extends Plugin
 
     /**
      * Create shortcode-handler
-     *  
+     *
      * @param Event $e RocketTheme Event-handler
-     * 
+     *
      * @return void
      */
     public function onShortcodeHandlers(Event $e)
     {
-        $this->grav['shortcode']->registerShortcode('NomnomlShortcode.php', __DIR__);
+        $this->grav['shortcode']->registerAllShortcodes(__DIR__.'/shortcodes');
     }
 
     /**
      * Initialize plugin assets
-     * 
+     *
      * @return void
      */
     public function init()
