@@ -24,7 +24,8 @@ class NomnomlUMLDiagramsPlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
-            'onPluginsInitialized' => ['onPluginsInitialized', 0]
+            'onPluginsInitialized' => ['onPluginsInitialized', 0],
+            'registerNextGenEditorPlugin' => ['registerNextGenEditorPluginShortcodes', 0]
         ];
     }
 
@@ -59,6 +60,23 @@ class NomnomlUMLDiagramsPlugin extends Plugin
     public function onShortcodeHandlers(Event $e)
     {
         $this->grav['shortcode']->registerAllShortcodes(__DIR__.'/shortcodes');
+    }
+
+    /**
+     * Register shortcode with Nextgen-Editor
+     *
+     * @param Event $e RocketTheme Event-handler
+     *
+     * @return Event
+     */
+    public function registerNextGenEditorPluginShortcodes(Event $event)
+    {
+        $plugins = $event['plugins'];
+
+        $plugins['js'][] = 'plugin://nomnoml-uml-diagrams/nextgen-editor/shortcodes/nom.js';
+
+        $event['plugins'] = $plugins;
+        return $event;
     }
 
     /**
