@@ -1,3 +1,11 @@
+# v1.1.0
+## 23-02-2022
+
+1. [](#improved)
+    * Slight re-organization of repository to match official grav repos.
+2. [](#new)
+    * Adds support for the [Nextgen Editor](https://getgrav.org/premium/nextgen-editor) premium plugin.
+
 # v1.0.2
 ## 08-10-2018
 
