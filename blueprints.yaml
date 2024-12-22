@@ -1,5 +1,5 @@
 name: Nomnoml Uml Diagrams
-version: 1.1.0
+version: 1.1.1
 description: Render nomnoml UML Diagrams in Markdown
 icon: sitemap
 author:
@@ -9,7 +9,7 @@ homepage: https://github.com/OleVik/grav-plugin-nomnoml-uml-diagrams
 demo: http://nomnoml.com
 keywords: diagram, uml, nomnoml
 bugs: https://github.com/OleVik/grav-plugin-nomnoml-uml-diagrams/issues
-docs: https://github.com/OleVik/grav-plugin-nomnoml-uml-diagrams/blob/develop/README.md
+docs: https://github.com/OleVik/grav-plugin-nomnoml-uml-diagrams
 license: MIT
 dependencies:
   - shortcode-core
