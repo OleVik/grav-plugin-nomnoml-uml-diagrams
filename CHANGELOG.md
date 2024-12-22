@@ -1,3 +1,9 @@
+# v1.1.1
+## 22-12-2024
+
+1. [](#bugfix)
+    * Set docs-page as https://github.com/OleVik/grav-plugin-nomnoml-uml-diagrams
+
 # v1.1.0
 ## 23-02-2022
 
