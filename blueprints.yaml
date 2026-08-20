@@ -14,6 +14,11 @@ license: MIT
 dependencies:
   - shortcode-core
 
+compatibility:
+  grav:
+    - '1.7'
+    - '2.0'
+
 form:
   validation: strict
   fields:
