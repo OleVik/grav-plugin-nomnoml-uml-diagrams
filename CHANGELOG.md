@@ -1,3 +1,9 @@
+# v1.1.2
+## 20-08-2026
+
+1. [](#new)
+    * Declared compatibility with Grav 2, thanks @aricooperdavis!
+
 # v1.1.1
 ## 22-12-2024
 
